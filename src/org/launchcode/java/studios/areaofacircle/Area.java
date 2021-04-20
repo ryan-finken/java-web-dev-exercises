@@ -26,7 +26,11 @@ public class Area {
     private static boolean isValid(String input) {
         if (input.equals("")) {
             return false;
-        } else if (! isNumeric(input)) {
+        }
+        if (! isNumeric(input)) {
+            return false;
+        }
+        if (hasTooManyPeriods(input)) {
             return false;
         }
         return true;
@@ -39,5 +43,18 @@ public class Area {
             }
         }
         return true;
+    }
+
+    private static boolean hasTooManyPeriods(String input) {
+        int periodCount = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == '.') {
+                periodCount++;
+            }
+            if (periodCount == 2) {
+                return true;
+            }
+        }
+        return false;
     }
 }
