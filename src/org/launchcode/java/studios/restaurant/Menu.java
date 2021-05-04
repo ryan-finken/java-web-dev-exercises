@@ -18,11 +18,10 @@ public class Menu {
     }
 
     public void addItem(MenuItem item) {
-        items.put(item.getCategory().toLowerCase(), item);
+        items.put(item.getName().toLowerCase(), item);
         if (item.getItemDebut().compareTo(lastUpdated) >= 0) {
             lastUpdated = item.getItemDebut();
         }
-
     }
 
     public void removeItem(String name) {
@@ -30,7 +29,7 @@ public class Menu {
     }
 
     public MenuItem getItem(String name) {
-        return items.get(name);
+        return items.get(name.toLowerCase());
     }
 
     public String toString() {

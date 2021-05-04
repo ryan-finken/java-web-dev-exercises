@@ -54,4 +54,18 @@ public class MenuItem {
                     + "----------------------------------------\n";
         }
     }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (o.getClass() != getClass()) {
+            return false;
+        }
+        MenuItem aMenuItem = (MenuItem) o;
+        return aMenuItem.getName().toLowerCase().equals(getName().toLowerCase());
+    }
 }
