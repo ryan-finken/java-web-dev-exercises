@@ -14,12 +14,6 @@ public class CarTest {
 
     }
 
-    //TODO: remove this test before pushing to your personal GitLab account
-    @Test
-    public void emptyTest() {
-        assertEquals(10, 10, .001);
-    }
-
     @Test
     public void testInitialGasTank() {
         assertTrue(test_car.getGasTankLevel() == 10);
