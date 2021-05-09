@@ -28,4 +28,11 @@ public class TechTest {
         test.powerUp();
         assertEquals("message", test.getNotification());
     }
+
+    @Test
+    public void constructorsSetSequentialIDs() {
+        Laptop test1 = new Laptop();
+        SmartPhone test2 = new SmartPhone();
+        assertTrue(test1.getID() + 1 == test2.getID());
+    }
 }
