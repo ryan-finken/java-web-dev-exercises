@@ -13,7 +13,7 @@ public class Checkbox extends Question {
             return false;
         } else {
             for (int i = 0; i < getUserAnswer().length(); i++) {
-                if (getCorrectAnswer().indexOf(getUserAnswer().charAt(i)) < 0) {
+                if (getCorrectAnswer().toLowerCase().indexOf(getUserAnswer().toLowerCase().charAt(i)) < 0) {
                     return false;
                 }
             }
